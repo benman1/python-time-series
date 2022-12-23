@@ -1,0 +1,8 @@
+--extra-index-url https://pypi.anaconda.org/scipy-wheels-nightly/simple
+numpy>=1.18
+scipy>=1.4
+pandas>=0.25
+packaging>=21.3
+patsy>=0.5.2
+scikit-learn==1.2.0
+statsmodels>=0.14.0
