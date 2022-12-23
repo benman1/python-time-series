@@ -1,3 +1,4 @@
+# needed for statsmodels dev version 0.14.0
 --extra-index-url https://pypi.anaconda.org/scipy-wheels-nightly/simple
 numpy>=1.18
 scipy>=1.4
@@ -5,4 +6,5 @@ pandas>=0.25
 packaging>=21.3
 patsy>=0.5.2
 scikit-learn==1.2.0
-statsmodels>=0.14.0
+# at some point, you might want to change the statsmodels version to >=0.14.0
+statsmodels==0.14.0.dev668+gee14184ff
