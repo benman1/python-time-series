@@ -1,5 +1,6 @@
 # needed for statsmodels dev version 0.14.0
 --extra-index-url https://pypi.anaconda.org/scipy-wheels-nightly/simple
+jupyter
 numpy>=1.18
 scipy>=1.4
 pandas>=0.25
