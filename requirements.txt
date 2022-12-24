@@ -9,3 +9,8 @@ patsy>=0.5.2
 scikit-learn==1.2.0
 # at some point, you might want to change the statsmodels version to >=0.14.0
 statsmodels==0.14.0.dev668+gee14184ff
+pyreadr==0.4.7
+requests==2.28.1
+seaborn==0.12.1
+matplotlib==3.6.2
+
