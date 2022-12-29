@@ -1,6 +1,7 @@
 """Utility functions for data loading."""
 import datetime
 import operator
+from functools import lru_cache
 from typing import Literal, Sequence
 
 import requests
@@ -8,17 +9,16 @@ import pyreadr
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
-from fastcache import lru_cache
 
 
 SEASONALITY = Literal["hourly", "daily", "weekly", "monthly", "quarterly"]
 
 
 def get_sample_data(
-        seasonalities: Sequence[SEASONALITY],
-        nsamples: int = 1000,
-        use_trend: bool = True,
-        composition: Literal["multiplicative", "additive"] = "additive",
+    seasonalities: Sequence[SEASONALITY],
+    nsamples: int = 1000,
+    use_trend: bool = True,
+    composition: Literal["multiplicative", "additive"] = "additive",
 ) -> pd.DataFrame:
     """Create a sample dataset with seasonality at chosen periodicities.
 
@@ -27,25 +27,22 @@ def get_sample_data(
     """
     if len(seasonalities) == 0:
         return pd.DataFrame()
-    op = operator.add if composition == "additive" else operator.mult
+    op = operator.add if composition == "additive" else operator.mul
     freq_lookup = {
         "hourly": 1,
         "daily": 24,
         "weekly": 24 * 7,
         "monthly": 24 * 7 * 30,
-        "quarterly": 24 * 7 * 30 * 3
+        "quarterly": 24 * 7 * 30 * 3,
     }
 
     t = np.arange(1, nsamples)
     # start with residual
     y = np.random.randn(len(t))
     if use_trend:
-        y = op(y, 0.0001 * t**2)
+        y = op(y, 0.0001 * t ** 2)
     for seasonal in seasonalities:
-        y = op(
-            y,
-            5 * np.sin(2 * np.pi * t / freq_lookup[seasonal])
-        )
+        y = op(y, 5 * np.sin(2 * np.pi * t / freq_lookup[seasonal]))
     ts = pd.date_range(start="2020-01-01", freq="H", periods=len(t))
     df = pd.DataFrame(data=y, index=ts, columns=["y"])
     return df
@@ -73,8 +70,7 @@ def get_electrivity_demand() -> pd.DataFrame:
 @lru_cache(maxsize=1, typed=False)
 def get_energy_demand(scale: bool = True) -> pd.DataFrame:
     resp = requests.get(
-        "https://github.com/camroach87/gefcom2017data/"
-        "raw/master/data/gefcom.rda",
+        "https://github.com/camroach87/gefcom2017data/" "raw/master/data/gefcom.rda",
         allow_redirects=True,
     )
     open("gefcom.rda", "wb").write(resp.content)
@@ -84,8 +80,7 @@ def get_energy_demand(scale: bool = True) -> pd.DataFrame:
     if not scale:
         return df
     return pd.DataFrame(
-        data=StandardScaler().fit_transform(df),
-        columns=df.columns, index=df.index
+        data=StandardScaler().fit_transform(df), columns=df.columns, index=df.index
     )
 
 
@@ -101,7 +96,7 @@ def get_pollution() -> pd.DataFrame:
     ).pivot_table(values=column, index="Year", columns="Entity")
     df = df.astype(float)
     df.index = pd.Series(df.index).apply(
-        lambda x: datetime.strptime(str(x), "%Y")
+        lambda x: datetime.datetime.strptime(str(x), "%Y")
     )
     return df
 
