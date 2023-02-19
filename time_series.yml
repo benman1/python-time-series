@@ -6,6 +6,7 @@ dependencies:
   - python=3.10.8=h218abb5_1
   - catboost>=1.0.1
   - lightgbm==3.3.3
+  - jupyter==1.0.0
   - pip
   - pip:
     - --extra-index-url https://pypi.anaconda.org/scipy-wheels-nightly/simple
@@ -38,4 +39,5 @@ dependencies:
     - xlrd==2.0.1
     - yfinance==0.2.3
     - statsmodels==0.14.0.dev668+gee14184ff
+    - salesforce-merlion==2.0.2
 prefix: /opt/anaconda3/envs/time_series
