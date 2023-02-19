@@ -19,8 +19,7 @@ If you find anything amiss with the notebooks or dependencies, please feel free 
 
 If you want to change the conda dependency specification (the yaml file), you can test it like this:
 ```bash
-conda env remove --name time_series_new   # just in case
-conda env create -n time_series_new --file time_series.yml
+conda env remove --name time_series_new --force
 ```
 
 Then make sure, you test the notebooks in the new environment to see that they run.
