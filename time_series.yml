@@ -40,4 +40,5 @@ dependencies:
     - yfinance==0.2.3
     - statsmodels==0.14.0.dev668+gee14184ff
     - salesforce-merlion==2.0.2
+    - pyreadr==0.4.7
 prefix: /opt/anaconda3/envs/time_series

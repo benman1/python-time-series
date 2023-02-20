@@ -138,6 +138,7 @@ pyod==1.0.7
 pyOpenSSL @ file:///opt/conda/conda-bld/pyopenssl_1643788558760/work
 pyparsing @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_3a17y2delq/croots/recipe/pyparsing_1661452538853/work
 PyQt5-sip==12.11.0
+pyreadr==0.4.7
 pyrsistent @ file:///Users/builder/ci_310/pyrsistent_1642541562041/work
 PySocks @ file:///Users/builder/ci_310/pysocks_1642536366386/work
 python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
