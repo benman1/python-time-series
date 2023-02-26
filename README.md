@@ -22,4 +22,11 @@ If you want to change the conda dependency specification (the yaml file), you ca
 conda env create --file time_series.yml --force
 ```
 
+You can update the pip requirements like this:
+```bash
+pip freeze > requirements.txt
+```
+
+Please make sure that you keep these two ways of maintaining dependencies in sync.
+
 Then make sure, you test the notebooks in the new environment to see that they run.

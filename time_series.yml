@@ -10,7 +10,7 @@ dependencies:
   - pip
   - pip:
     - --extra-index-url https://pypi.anaconda.org/scipy-wheels-nightly/simple
-    - sktime
+    - sktime==0.16.1
     - xgboost==1.7.4
     - astral==3.2
     - catboost==1.1.1
@@ -41,4 +41,5 @@ dependencies:
     - statsmodels==0.14.0.dev668+gee14184ff
     - salesforce-merlion==2.0.2
     - pyreadr==0.4.7
+    - neuralforecast==1.4.0
 prefix: /opt/anaconda3/envs/time_series
