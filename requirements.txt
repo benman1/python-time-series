@@ -221,3 +221,4 @@ xlrd==2.0.1
 yarl==1.8.2
 yfinance==0.2.3
 zict==2.2.0
+alibi-detect==0.11.1

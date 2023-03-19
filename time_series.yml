@@ -42,4 +42,6 @@ dependencies:
     - salesforce-merlion==2.0.2
     - pyreadr==0.4.7
     - neuralforecast==1.4.0
+    - pyod==1.0.7
+    - alibi-detect==0.11.1
 prefix: /opt/anaconda3/envs/time_series
