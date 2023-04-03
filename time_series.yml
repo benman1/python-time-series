@@ -45,5 +45,5 @@ dependencies:
     - pyod==1.0.7
     - alibi-detect==0.11.1
     - ruptures==1.1.7
-    - river==0.14.0
+    - river==0.13.0
 prefix: /opt/anaconda3/envs/time_series
