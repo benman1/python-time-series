@@ -47,4 +47,5 @@ dependencies:
     - ruptures==1.1.7
     - river==0.13.0
     - lifelines==0.27.4
+    - mab_ranking==0.0.1
 prefix: /opt/anaconda3/envs/time_series
