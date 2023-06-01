@@ -8,6 +8,11 @@ You can install your local environment with conda (recommended) or pip. The envi
 conda env create --file time_series.yml
 ```
 
+The conda environment is called `time_series`. You can activate it as follows:
+```bash
+conda activate time_series
+```
+
 ## Pip
 ```bash
 pip install -r requirements.txt
