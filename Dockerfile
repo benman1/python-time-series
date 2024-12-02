@@ -1,5 +1,8 @@
 # Using a base image:
-FROM continuumio/miniconda3
+FROM continuumio/miniconda3:23.9.0-0
+
+ENV PIP_DEFAULT_TIMEOUT=1000
+
 # Update conda:
 RUN conda update -n base -c defaults conda
 # Create the environment:
