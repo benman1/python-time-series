@@ -1,3 +1,6 @@
+This is the code repository for <a href ="https://www.amazon.co.uk/Machine-Learning-Time-state-art-dp-1837631336/dp/1837631336">Machine Learning for Time Series</a>, published by Packt.</p>
+
+
 # python-time-series
 Time-Series analysis, statistical and machine learning models for forecasting, regression, and classification
 
